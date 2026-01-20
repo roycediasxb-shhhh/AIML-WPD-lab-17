@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pricing Plans</title>
+
+    <style>
+        /* Page styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 40px;
+            font-size: 32px;
+            color: #333;
+        }
+
+        /* Container for pricing cards */
+        .pricing-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Base styling for all pricing cards */
+        .pricing-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex: 0 0 200px; /* fixed width, no grow/shrink by default */
+            border: 2px solid black;
+            border-radius: 12px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+        }
+
+        .pricing-card h2 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: #0077cc;
+        }
+
+        .pricing-card p {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Specific plan styling and order */
+        .basic-plan {
+            order: 1;
+            background-color: #e0f7fa;
+        }
+
+        .pro-plan {
+            order: 2;
+            flex-grow: 2; /* take more space than other cards */
+            background-color: #ffe0b2;
+        }
+
+        .premium-plan {
+            order: 3;
+            background-color: #f3e5f5;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Pricing Plans</h1>
+
+    <div class="pricing-container">
+
+        <div class="pricing-card basic-plan">
+            <h2>Basic</h2>
+            <p>$9/month</p>
+        </div>
+
+        <div class="pricing-card pro-plan">
+            <h2>Pro</h2>
+            <p>$19/month</p>
+        </div>
+
+        <div class="pricing-card premium-plan">
+            <h2>Premium</h2>
+            <p>$29/month</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
