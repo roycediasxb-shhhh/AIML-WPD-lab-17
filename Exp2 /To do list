@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced Todo List</title>
+
+    <style>
+        /* Page styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f4f8;
+            padding: 40px;
+        }
+
+        /* Main list */
+        .todo-list {
+            list-style: none;
+            max-width: 450px;
+            margin: auto;
+            padding: 0;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .todo-list > li {
+            padding: 16px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .todo-list > li:last-child {
+            border-bottom: none;
+        }
+
+        /* Sub list */
+        .sub-item {
+            list-style: none;
+            margin-top: 10px;
+            padding-left: 28px;
+        }
+
+        /* Base link style */
+        .sub-item-link {
+            text-decoration: none;
+            color: #0066cc;        /* unvisited */
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        /* Visited */
+        .sub-item-link:visited {
+            color: #6a1b9a;
+        }
+
+        /* Hover */
+        .sub-item-link:hover {
+            color: #ff6600;
+        }
+
+        /* Focus */
+        .sub-item-link:focus {
+            outline: 2px solid orange;
+            outline-offset: 3px;
+        }
+
+        /* Active (clicked) */
+        .sub-item-link:active {
+            color: #cc0000;
+        }
+
+        /* Checkbox spacing */
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        label {
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <ul class="todo-list">
+
+        <li>
+            <input type="checkbox" id="task1">
+            <label for="task1">Complete HTML structure</label>
+
+            <ul class="sub-item">
+                <li>
+                    <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+                        class="sub-item-link"
+                        target="_blank"
+                    >
+                        Learn HTML
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <input type="checkbox" id="task2">
+            <label for="task2">Style with CSS</label>
+
+            <ul class="sub-item">
+                <li>
+                    <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+                        class="sub-item-link"
+                        target="_blank"
+                    >
+                        Learn CSS
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <input type="checkbox" id="task3">
+            <label for="task3">Add interactivity</label>
+
+            <ul class="sub-item">
+                <li>
+                    <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                        class="sub-item-link"
+                        target="_blank"
+                    >
+                        Learn JavaScript
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <input type="checkbox" id="task4">
+            <label for="task4">Test and deploy</label>
+
+            <ul class="sub-item">
+                <li>
+                    <a
+                        href="https://www.netlify.com/"
+                        class="sub-item-link"
+                        target="_blank"
+                    >
+                        Deploy Website
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+    </ul>
+
+</body>
+</html>
