@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Confidential</title>
+
+    <style>
+        /* Main email container */
+        #email {
+            width: 500px;
+            padding: 50px;
+            margin: 50px auto 0 auto;
+            border: 2px solid #333;
+            box-sizing: border-box; /* ensures total width = 500px including padding & border */
+            background-color: #fff;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+
+        /* Confidential and Top Secret stamps */
+        #confidential,
+        #top-secret {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-left: 10px;
+            border: 2px solid #333;
+            font-weight: bold;
+            font-size: 14px;
+            color: #fff;
+            background-color: #e74c3c;
+            transform: rotate(-15deg);
+        }
+
+        #top-secret {
+            background-color: #f39c12;
+            transform: rotate(12deg);
+        }
+
+        /* Paragraphs */
+        #email p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        /* Blurred spans */
+        .blurred {
+            filter: blur(3px);
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <main id="email">
+
+        <!-- Stamps -->
+        <div id="confidential">CONFIDENTIAL</div>
+        <div id="top-secret">TOP SECRET</div>
+
+        <!-- Email content -->
+        <p>Hello <span class="blurred">John Doe</span>,</p>
+
+        <p>
+            Please review the attached document regarding <span class="blurred">project X</span>. 
+            Ensure that all sensitive information marked as <span class="blurred">TOP SECRET</span> 
+            remains secure.
+        </p>
+
+        <p>
+            Our next meeting is scheduled for <span class="blurred">Monday, 10 AM</span>. 
+            Do not share the details with <span class="blurred">unauthorized personnel</span>.
+        </p>
+
+    </main>
+
+</body>
+</html>
