@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feature Selection</title>
+
+    <style>
+        /* Page styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6fa;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Container */
+        .feature-card-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Feature card */
+        .feature-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 22px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Checkbox base styling */
+        .feature-card input[type="checkbox"] {
+            appearance: none;
+            width: 22px;
+            height: 22px;
+            border: 2px solid #555;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* Checkmark */
+        .feature-card input[type="checkbox"]::after {
+            content: "✓";
+            font-size: 16px;
+            color: white;
+            display: none;
+        }
+
+        /* Checked state */
+        .feature-card input[type="checkbox"]:checked {
+            background-color: #0077cc;
+            border-color: #0077cc;
+        }
+
+        .feature-card input[type="checkbox"]:checked::after {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Feature Selection</h1>
+
+    <div class="feature-card-container">
+
+        <label class="feature-card">
+            <input type="checkbox">
+            Dark Mode
+        </label>
+
+        <label class="feature-card">
+            <input type="checkbox">
+            Notifications
+        </label>
+
+        <label class="feature-card">
+            <input type="checkbox">
+            Auto Updates
+        </label>
+
+    </div>
+
+</body>
+</html>
