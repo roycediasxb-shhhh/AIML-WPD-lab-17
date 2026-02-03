@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Royce Dias | Portfolio</title>
+
+<style>
+/* ================= THEME VARIABLES ================= */
+:root {
+    --bg: #f4f6f8;
+    --text: #222;
+    --accent: #0077cc;
+    --card: #ffffff;
+    --nav: #0077cc;
+    --input-bg: #f9f9f9;
+}
+
+body.dark-mode {
+    --bg: #121212;
+    --text: #eaeaea;
+    --accent: #00bfff;
+    --card: #1f1f1f;
+    --nav: #1a1a1a;
+    --input-bg: #2a2a2a;
+}
+
+/* ================= GLOBAL ================= */
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s;
+}
+
+/* ================= NAVBAR ================= */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--nav);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    margin-right: 20px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+#theme-toggle {
+    background: white;
+    color: var(--nav);
+    border: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ================= SECTIONS ================= */
+section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 120px 20px 60px;
+}
+
+/* ================= HERO ================= */
+#welcome {
+    background: linear-gradient(135deg, var(--accent), #00d4ff);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    border-radius: 16px;
+}
+
+#welcome h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+/* ================= CARDS ================= */
+.card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+}
+
+/* ================= PROJECTS ================= */
+.project {
+    margin-bottom: 15px;
+}
+
+.project h3 {
+    color: var(--accent);
+}
+
+/* ================= FORM ================= */
+form label {
+    font-weight: 600;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background: var(--input-bg);
+    color: var(--text);
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+form button:hover {
+    filter: brightness(90%);
+}
+
+.error {
+    color: #ff4d4d;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+#savedData {
+    margin-top: 15px;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+/* ================= FOOTER ================= */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--nav);
+    color: white;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    #welcome h1 {
+        font-size: 36px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div>
+        <a href="#welcome">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <button id="theme-toggle">🌙 Theme</button>
+</nav>
+
+<!-- HERO -->
+<section id="welcome">
+    <h1>Royce Dias</h1>
+    <p>AI/ML Student • Web Developer • Tech Enthusiast</p>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <div class="card">
+        <h2>Projects</h2>
+
+        <div class="project">
+            <h3>Portfolio Website</h3>
+            <p>Responsive portfolio with dark/light mode.</p>
+        </div>
+
+        <div class="project">
+            <h3>Todo App</h3>
+            <p>JavaScript Todo app using localStorage.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="card">
+        <h2>Contact Me</h2>
+
+        <form id="contactForm">
+            <label>Email</label>
+            <input type="email" id="email">
+            <div class="error" id="emailError"></div>
+
+            <label>Phone Number</label>
+            <input type="text" id="phone">
+            <div class="error" id="phoneError"></div>
+
+            <label>Password</label>
+            <input type="password" id="password">
+            <div class="error" id="passwordError"></div>
+
+            <button type="submit">Save Details</button>
+        </form>
+
+        <div id="savedData"></div>
+    </div>
+</section>
+
+<footer>
+    © 2026 Royce Dias | Portfolio
+</footer>
+
+<script>
+/* THEME TOGGLE */
+const toggle = document.getElementById("theme-toggle");
+
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+}
+
+toggle.onclick = () => {
+    document.body.classList.toggle("dark-mode");
+    localStorage.setItem(
+        "theme",
+        document.body.classList.contains("dark-mode") ? "dark" : "light"
+    );
+};
+
+/* FORM VALIDATION + STORAGE */
+const form = document.getElementById("contactForm");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let valid = true;
+    emailError.textContent = phoneError.textContent = passwordError.textContent = "";
+
+    if (!email.value.includes("@")) {
+        emailError.textContent = "Enter a valid email";
+        valid = false;
+    }
+
+    if (phone.value.length !== 10 || isNaN(phone.value)) {
+        phoneError.textContent = "Enter 10-digit phone number";
+        valid = false;
+    }
+
+    if (password.value.length < 6) {
+        passwordError.textContent = "Password must be at least 6 characters";
+        valid = false;
+    }
+
+    if (valid) {
+        const user = {
+            email: email.value,
+            phone: phone.value
+        };
+        localStorage.setItem("userData", JSON.stringify(user));
+        displayData();
+        form.reset();
+    }
+});
+
+/* DISPLAY STORED DATA */
+function displayData() {
+    const data = JSON.parse(localStorage.getItem("userData"));
+    if (data) {
+        savedData.textContent =
+            "Saved → Email: " + data.email + " | Phone: " + data.phone;
+    }
+}
+
+displayData();
+</script>
+
+</body>
+</html>
