@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Royce Dias | Advanced Portfolio</title>
+
+<style>
+/* ================== CSS VARIABLES ================== */
+:root {
+    --bg: #f4f6f8;
+    --text: #222;
+    --accent: #0077ff;
+    --card: #ffffff;
+    --nav: #0077ff;
+}
+
+body.dark {
+    --bg: #121212;
+    --text: #eaeaea;
+    --accent: #00bfff;
+    --card: #1f1f1f;
+    --nav: #1a1a1a;
+}
+
+/* ================== GLOBAL ================== */
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: all 0.3s ease;
+}
+
+/* ================== NAVBAR ================== */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--nav);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    margin-right: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+#themeBtn {
+    padding: 8px 14px;
+    border: none;
+    background: var(--accent);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ================== SECTIONS ================== */
+section {
+    padding: 100px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* ================== HERO ================== */
+#welcome {
+    text-align: center;
+    background: linear-gradient(135deg, var(--accent), #00d4ff);
+    color: white;
+    border-radius: 12px;
+    padding: 80px 20px;
+    animation: fadeIn 1.5s ease;
+}
+
+#welcome h1 {
+    font-size: 48px;
+}
+
+#welcome span {
+    color: yellow;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+}
+
+.hero-buttons button {
+    margin: 10px;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background: white;
+    color: var(--accent);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hero-buttons button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* ================== CARDS ================== */
+.card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* ================== SKILLS ================== */
+.skills span {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    margin: 6px;
+    font-size: 14px;
+}
+
+/* ================== FORM ================== */
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* ================== FOOTER ================== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--nav);
+    color: white;
+}
+
+/* ================== ANIMATIONS ================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+    #welcome h1 {
+        font-size: 36px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================== NAVBAR ================== -->
+<nav>
+    <div>
+        <a href="#welcome">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <button id="themeBtn">🌙 Toggle</button>
+</nav>
+
+<!-- ================== HERO ================== -->
+<section id="welcome">
+    <h1>Hello, I'm <span>Royce Dias</span></h1>
+    <p>AI/ML Student • Web Developer • Tech Enthusiast</p>
+
+    <!-- BUTTON TO PROJECTS -->
+    <div class="hero-buttons">
+        <button id="projectBtn">View My Projects</button>
+    </div>
+</section>
+
+<!-- ================== ABOUT ================== -->
+<section id="about">
+    <div class="card">
+        <h2>About Me</h2>
+        <p>
+            I am currently studying AI/ML and passionate about web development,
+            software engineering, and building modern applications.
+        </p>
+    </div>
+
+    <div class="card skills">
+        <h2>Skills</h2>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Python</span>
+        <span>Java</span>
+        <span>Flutter</span>
+    </div>
+</section>
+
+<!-- ================== PROJECTS ================== -->
+<section id="projects">
+    <h2>Projects</h2>
+
+    <div class="card">
+        <h3>Portfolio Website</h3>
+        <p>https://github.com/roycediasxb-shhhh/AIML-WPD-lab-17D</p>
+    </div>
+
+    <div class="card">
+        <h3>Todo App</h3>
+        <p>JavaScript-based Todo App using localStorage.</p>
+    </div>
+</section>
+
+<!-- ================== CONTACT ================== -->
+<section id="contact">
+    <div class="card">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p id="formStatus"></p>
+    </div>
+</section>
+
+<footer>
+    © 2026 Royce Dias | Advanced Portfolio
+</footer>
+
+<!-- ================== JAVASCRIPT ================== -->
+<script>
+/* Theme toggle with memory */
+const themeBtn = document.getElementById("themeBtn");
+const body = document.body;
+
+if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark");
+}
+
+themeBtn.addEventListener("click", () => {
+    body.classList.toggle("dark");
+    localStorage.setItem(
+        "theme",
+        body.classList.contains("dark") ? "dark" : "light"
+    );
+});
+
+/* Button scroll to projects */
+document.getElementById("projectBtn").addEventListener("click", () => {
+    document.getElementById("projects").scrollIntoView({
+        behavior: "smooth"
+    });
+});
+
+/* Contact form handling */
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    document.getElementById("formStatus").innerText =
+        "✅ Thank you! Your message has been sent.";
+    this.reset();
+});
+</script>
+
+</body>
+</html>
